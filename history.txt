@@ -1,0 +1,220 @@
+    1  ls
+    2  emacs
+    3  apt-get install emacs24-nox
+    4  sudo apt-get install emacs23-nox
+    5  ls
+    6  emacs something.txt
+    7  cat something.txt
+    8  git clone https://github.com/fsantanna/ceu.git
+    9  sudo apt-get install git
+   10  git clone https://github.com/fsantanna/ceu.git
+   11  ls
+   12  cd ceu/
+   13  ls
+   14  make
+   15  sudo apt-get install make
+   16  make
+   17  apt-get install lua
+   18  sudo apt-get install lua
+   19  sudo apt-get install lua-5.3
+   20  cd ..
+   21  curl -R -O http://www.lua.org/ftp/lua-5.3.4.tar.gz
+   22  tar zxf lua-5.3.4.tar.gz
+   23  cd lua-5.3.4
+   24  make linux test
+   25  sudo apt-get install gcc
+   26  make linux test
+   27  apt-cache search readline
+   28  sudo apt-get install libreadline libreadline-dev
+   29  sudo apt-get install libreadline6 libreadline6-dev
+   30  make linux test
+   31  emacs ~/.bashrc
+   32  echo "PATH=$PATH:~/lua-5.3.4/bin"
+   33  ls
+   34  ls src/
+   35  echo 'PATH=$PATH:~/lua-5.3.4/src'
+   36  echo 'PATH=$PATH:~/lua-5.3.4/src' >> ~/.bashrc
+   37  lu
+   38  lua
+   39  source ~/.bashrc
+   40  lua
+   41  cd ..
+   42  cd ceu/
+   43  make
+   44  cd ../lua-5.3.4/src/
+   45  ln -s lua lua5.3
+   46  ls
+   47  ls -la
+   48  cd ~/ceu
+   49  make
+   50  ls
+   51  cat INSTALL.md 
+   52  ls tst/
+   53  ls
+   54  ls src
+   55  cat Makefile 
+   56  make samples
+   57  ls
+   58  make
+   59  ./ceu
+   60  cd src/lua/
+   61  ls
+   62  ./ceu --version
+   63  cat Makefile 
+   64  history | grep cat
+   65  history | grep echo
+   66  echo 'PATH=$PATH:~/ceu/src/lua' >> ~/.bashrc
+   67  cd ..
+   68  cd ~
+   69  ls
+   70  mkdir learn_ceu_030
+   71  cd learn_ceu_030
+   72  ls
+   73  git init
+   74  emacs hello.ceu
+   75  ceu hello.ceu
+   76  source ~/.bashrc 
+   77  history
+   78  ceu hello.ceu
+   79  ceu --ceu hello.ceu
+   80  ceu --ceu-input=hello.ceu
+   81  ceu --ceu-input=hello.ceu --ceu-output=hello_ceu.c
+   82  ls
+   83  ceu --pre-input=hello.ceu
+   84  ceu --pre --pre-input=hello.ceu
+   85  ceu --pre --pre-input=hello.ceu --pre-output=hello_preprocessed.ceu
+   86  emacs hello.ceu
+   87  ceu --pre --pre-input=hello.ceu --pre-output=hello_preprocessed.ceu
+   88  emacs hello_preprocessed.ceu 
+   89  ceu --help
+   90  ceu --ceu --ceu-input=hello.ceu
+   91  apt-cache search lpeg
+   92  sudo apt-get install lua-lpeg
+   93  ceu --ceu --ceu-input=hello.ceu
+   94  cd ~
+   95  ls
+   96  wget http://www.inf.puc-rio.br/~roberto/lpeg/lpeg-1.0.1.tar.gz
+   97  tar -xvzf lpeg-1.0.1.tar.gz 
+   98  cd lpeg-1.0.1/
+   99  ls
+  100  make
+  101  emacs makefile 
+  102  ls ../lua-5.3.4/src/
+  103  make LUADIR=../lua-5.3.4/src
+  104  ls
+  105  cd ~/learn_ceu_030/
+  106  ls
+  107  rm hello_preprocessed.ceu 
+  108  ceu --help
+  109  ceu --ceu hello.ceu
+  110  ceu --ceu --ceu-input=hello.ceu
+  111  cp ~/lpeg-1.0.1/lpeg.so .
+  112  ceu --ceu --ceu-input=hello.ceu
+  113  emacs hello.ceu
+  114  ceu --ceu --ceu-input=hello.ceu
+  115  emacs hello.ceu
+  116  ceu --ceu --ceu-input=hello.ceu
+  117  ceu --ceu --ceu-input=hello.ceu --ceu-output=hello.c
+  118  ls
+  119  emacs Makefile
+  120  make hello.o
+  121  ceu --env --env-ceu=user.c --env-types=types.h --env-main=main.c
+  122  emacs types.h
+  123  ceu --env --env-ceu=user.c --env-types=types.h --env-main=main.c
+  124  ceu --env --env-ceu=hello.c --env-types=types.h --env-main=main.c
+  125  emacs main.c
+  126  ceu --env --env-ceu=hello.c --env-types=types.h --env-main=main.c
+  127  ceu --env --env-ceu=hello.c --env-types=types.h --env-main=main.c --output=hello_plus_env.c
+  128  ceu --env --env-ceu=hello.c --env-types=types.h --env-main=main.c --env-output=hello_plus_env.c
+  129  emacs Makefile
+  130  make
+  131  gcc hello_plus_env.c 
+  132  grep tceu_trace *
+  133  emacs hello_plus_env.c 
+  134  grep tceu_trace hello_plus_env.c 
+  135  ceu --help
+  136  emacs hello_plus_env.c 
+  137  emacs Makefile
+  138  ls
+  139  emacs Makefile
+  140  make
+  141  make clean
+  142  make
+  143  gcc hello_plus_env.c 
+  144  emacs hello_plus_env.c 
+  145  make
+  146  gcc hello_plus_env.c
+  147  emacs main.c
+  148  make
+  149  emacs Makefile
+  150  make
+  151  emacs hello_plus_env.c
+  152  emacs main.c
+  153  emacs hello_plus_env.c
+  154  emacs main.c
+  155  make
+  156  emacs hello_plus_env.c
+  157  make
+  158  ./hello
+  159  emacs main.c
+  160  make
+  161  emacs main.c
+  162  emacs hello.c
+  163  ls
+  164  emacs hello.ceu
+  165  emacs types.h
+  166  emacs main.c
+  167  make
+  168  emacs main.c
+  169  make
+  170  ./hello 
+  171  emacs main.c
+  172  make
+  173  emacs main.c
+  174  make
+  175  ./hello
+  176  emacs main.c
+  177  mae
+  178  make
+  179  ./hello
+  180  emacs hello.ceu
+  181  make clean
+  182  make
+  183  ./hello
+  184  emacs hello.ceu
+  185  make
+  186  emacs hello.ceu
+  187  make
+  188  ./hello 
+  189  emacs hello.ceu
+  190  make
+  191  ./hello
+  192  emacs hello.ceu
+  193  make
+  194  ./hello 
+  195  emacs hello.ceu
+  196  ./hello 
+  197  make
+  198  ./hello 
+  199  emacs hello.ceu
+  200  ./hello 
+  201  make
+  202  ./hello
+  203  emacs hello.ceu
+  204  ./hello
+  205  make
+  206  ./hello
+  207  ls
+  208  rm *~
+  209  emacs Makefile 
+  210  make clean
+  211  ls
+  212  rm *~
+  213  git add hello.ceu
+  214  git add main.c
+  215  git add Makefil
+  216  git add Makefile
+  217  ls
+  218  git add types.h
+  219  history
+  220  history >history.txt

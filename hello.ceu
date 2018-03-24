@@ -1,0 +1,65 @@
+native/nohold _printf;
+native/pre do
+##include <stdio.h> // include the relevant header for "printf"
+end
+
+input int I;
+output int O;
+
+// _printf("Boot reaction\n");
+
+// This is probably bad style - leaning on the order of execution to communicate "side band" information from one trail to another.
+var bool unhandled = true;
+par/or do
+  loop do
+    await I;
+    // _printf("Control flow always reaches here immediately after an I event.\n");
+    unhandled = true;
+  end
+with
+  par/and do
+    var int a;
+    loop do
+     a = await I;
+     if a % 3 == 0 then
+       break;
+     end
+    end
+    // _printf("Control flow only reaches here after an I event containing a multiple of 3.\n");
+    emit O(-1);
+    unhandled = false;
+  with
+    var int b;
+    loop do
+     b = await I;
+     if b % 5 == 0 then
+       break;
+     end
+    end
+    // _printf("Control flow only reaches here after an I event containing a multiple of 5.\n");
+    emit O(-2);
+    unhandled = false;
+  end
+with
+  loop do
+    var int c;
+    loop do
+      c = await I;
+      if unhandled then
+       break;
+      end
+    end
+    // _printf("Control flow only reaches here after an I event was not handled by the 3 or 5 previous trails.\n");
+    emit O(c);
+  end
+with
+  loop do
+    await I;
+    // _printf("Control flow reaches here after an I event.\n");
+    emit O(-3);
+  end 
+end
+
+emit O(-3);
+
+escape 0;
